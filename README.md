@@ -27,6 +27,7 @@ Wechsel von slice_onoff auf slice_status
 
 1. `slice_status` installieren. Es werden automatisch die Daten von `slice_onoff` importiert.
 2. `slice_onoff` deinstallieren/löschen.
+3. Cache köschen.
 
 Will man keinen Import so deinstalliert man `slice_onoff` zuvor.
 

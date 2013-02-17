@@ -82,7 +82,7 @@ class rex_slice_status {
 		}
 	}
 
-	static function updateSliceStatusInDB($articleID, $cLang, $sliceID, $newStatus) {
+	static function updateSliceStatus($articleID, $cLang, $sliceID, $newStatus) {
 		global $REX;
 
 		// update db

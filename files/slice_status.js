@@ -48,7 +48,7 @@ function updateSliceStatus(articleID, cLang, sliceID, curStatus) {
 	// construct href
 	var aHref = 'javascript:updateSliceStatus(' + articleID + ',' + cLang + ',' + sliceID + ',' + newStatus + ');';
 	
-	// make ajax call to update slice status in db (php function 'updateSliceStatusInDB' is called in config.inc.php)
+	// make ajax call to update slice status in db (php function 'updateSliceStatus' is called in config.inc.php)
 	jQuery.ajax({ 
 		type: 'GET',
 		url: window.location.pathname + '?function=updateslicestatus&new_status=' + newStatus + '&slice_id=' + sliceID + '&article_id=' + articleID + '&clang=' + cLang + '',

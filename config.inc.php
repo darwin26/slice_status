@@ -21,7 +21,7 @@ if ($REX['REDAXO']) {
 
 	// update slice status in db if necessary
 	if (rex_get('function') == 'updateslicestatus') {
-		rex_slice_status::updateSliceStatusInDB(rex_get('article_id'), rex_get('clang'), rex_get('slice_id'), rex_get('new_status'));
+		rex_slice_status::updateSliceStatus(rex_get('article_id'), rex_get('clang'), rex_get('slice_id'), rex_get('new_status'));
 	}
 
 	// handle slice menu

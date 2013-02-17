@@ -94,9 +94,18 @@ class rex_slice_status {
 	}
 
 	static function appendToPageHeader($params) {
+		global $REX;
+
+		// check for media addon dir var introduced in REX 4.5
+		if (isset($REX['MEDIA_ADDON_DIR'])) {
+			$mediaAddonDir = $REX['MEDIA_ADDON_DIR'];
+		} else {
+			$mediaAddonDir = 'files/addons';
+		}
+
 		$insert = '<!-- BEGIN slice_status -->' . PHP_EOL;
-		$insert .= '<link rel="stylesheet" type="text/css" href="../files/addons/slice_status/slice_status.css" />' . PHP_EOL;
-		$insert .= '<script type="text/javascript" src="../files/addons/slice_status/slice_status.js"></script>' . PHP_EOL;
+		$insert .= '<link rel="stylesheet" type="text/css" href="../' . $mediaAddonDir . '/slice_status/slice_status.css" />' . PHP_EOL;
+		$insert .= '<script type="text/javascript" src="../' . $mediaAddonDir . '/slice_status/slice_status.js"></script>' . PHP_EOL;
 		$insert .= '<!-- END slice_status -->';
 	
 		return $params['subject'] . PHP_EOL . $insert;

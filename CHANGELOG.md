@@ -1,7 +1,7 @@
 Slice Status - Changelog
 ========================
 
-### Version 1.2.3 - 17. Feburar 2013
+### Version 1.2.5 - 17. Feburar 2013
 
 * $REX['MEDIA_ADDON_DIR'] wird genutzt wenn vorhanden
 * Changelog hinzugefügt

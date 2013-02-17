@@ -34,20 +34,14 @@ Will man keinen Import so deinstalliert man `slice_onoff` zuvor.
 Hinweise
 --------
 
-* Getestet mit REDAXO 4.4.1
+* Getestet mit REDAXO 4.4, 4.3
 * Addon-Ordner lautet: `slice_status`
 * AJAX Modus auschaltbar über die config.inc.php
 * Farbe/Opacity der Offline-Slices änderbar in `/files/addons/slice_status/slice_status.css`
 * Alte Version wurde als Branch archiviert
 
-Todo's
-------
+Credits
+-------
 
-* Eigene Backend-Seite mit Einstellungsmöglichkeiten
-* Benutzern nur mit Artikel-Schreibrechten On/Offline-Status setzten lassen
-* Online von/bis Funktionalität hinzufügen: https://github.com/RexDude/slice_status/issues/2
-
-Icons
------
-
-Die Icons sind den <a href="http://www.famfamfam.com/lab/icons/silk/">FamFamFam Silk Icons</a> entnommen.
+* Dank gilt dem ursprünglichen Autor von slice_onoff für die Idee und die Vorlage.
+* Icons von hier entnommen: <a href="http://www.famfamfam.com/lab/icons/silk/">FamFamFam Silk Icons</a>

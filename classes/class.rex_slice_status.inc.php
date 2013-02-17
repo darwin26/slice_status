@@ -75,7 +75,7 @@ class rex_slice_status {
 		$sql = rex_sql::factory();
 		$sql->setQuery($sqlStatement);
 	
-		if (!isset($slices[$slice_id]) || $sql->getValue('status') == 1 || $REX['REDAXO']) {
+		if ($sql->getRows() == 0 || $sql->getValue('status') == 1 || $REX['REDAXO']) {
 			return $subject;
 		} else {
 			return '<?php if (false) { ?>' . $subject . '<?php } ?>';

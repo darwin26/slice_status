@@ -1,13 +1,20 @@
 <?php
 class rex_slice_status {
 	static function fetchSliceStatus() {
-		global $REX;
+		global $REX, $I18N;
 		$fetchedSliceStatus = array();
 	
 		$sqlStatement = 'SELECT id, status FROM ' . $REX['TABLE_PREFIX'] . 'article_slice';
 		$sql = rex_sql::factory();
 		$sql->setQuery($sqlStatement);
 
+		// check for status db field
+		if ($sql->getRows() == 0) {
+			echo rex_warning($I18N->msg('status_debfield_not_found'));
+			return array();
+		}
+
+		// fetch status array
 		for ($i = 0; $i < $sql->getRows(); $i++) {
 			$fetchedSliceStatus[$sql->getValue('id')] = $sql->getValue('status');
 			$sql->next();
@@ -25,35 +32,36 @@ class rex_slice_status {
 
 		// get status of current slice
 		if (!isset($slices)) {
-			// with this now only one db query is necessary
-			$slices = self::fetchSliceStatus();
+			$slices = self::fetchSliceStatus(); // now only one db query necessary
 		}
 	
-		$curStatus = $slices[$slice_id];
+		if (isset($slices[$slice_id])) {
+			$curStatus = $slices[$slice_id];
 
-		// retrieve stuff for new status
-		if ($curStatus == 1) {
-			$aClass = 'slice-status slice-' . $slice_id . ' online';
-			$aTitle = $I18N->msg('toggle_slice_offline');
-			$newStatus = '0';
-		} else {
-			$aClass = 'slice-status slice-' . $slice_id . ' offline';
-			$aTitle = $I18N->msg('toggle_slice_online');
-			$newStatus = '1';
+			// retrieve stuff for new status
+			if ($curStatus == 1) {
+				$aClass = 'slice-status slice-' . $slice_id . ' online';
+				$aTitle = $I18N->msg('toggle_slice_offline');
+				$newStatus = '0';
+			} else {
+				$aClass = 'slice-status slice-' . $slice_id . ' offline';
+				$aTitle = $I18N->msg('toggle_slice_online');
+				$newStatus = '1';
+			}
+	
+			// construct href
+			if ($REX['ADDON']['slice_status']['ajax_mode']) {
+				$aHref = 'javascript:updateSliceStatus(' . $article_id . ',' . $clang . ',' . $slice_id . ',' . $curStatus . ');';
+			} else {
+				$aHref = 'index.php?page=content&article_id=' . $article_id . '&mode=edit&slice_id=' . $slice_id . '&clang=' . $clang . '&ctype=' . $ctype . '&function=updateslicestatus' . '&new_status=' . $newStatus . '#slice' . $slice_id;	
+			}
+	
+			// inject link in slice menu
+			$dataAttributes = 'data-title-online="' . $I18N->msg('toggle_slice_online') . '" data-title-offline="' . $I18N->msg('toggle_slice_offline') . '"';
+			$statusLink = '<a class="' . $aClass . '" href="' . $aHref . '" title="' . $aTitle . '" ' . $dataAttributes . '><span>Slice Status</span></a>';
+	
+			$subject[] = $statusLink;
 		}
-	
-		// construct href
-		if ($REX['ADDON']['slice_status']['ajax_mode']) {
-			$aHref = 'javascript:updateSliceStatus(' . $article_id . ',' . $clang . ',' . $slice_id . ',' . $curStatus . ');';
-		} else {
-			$aHref = 'index.php?page=content&article_id=' . $article_id . '&mode=edit&slice_id=' . $slice_id . '&clang=' . $clang . '&ctype=' . $ctype . '&function=updateslicestatus' . '&new_status=' . $newStatus . '#slice' . $slice_id;	
-		}
-	
-		// inject link in slice menu
-		$dataAttributes = 'data-title-online="' . $I18N->msg('toggle_slice_online') . '" data-title-offline="' . $I18N->msg('toggle_slice_offline') . '"';
-		$statusLink = '<a class="' . $aClass . '" href="' . $aHref . '" title="' . $aTitle . '" ' . $dataAttributes . '><span>Slice Status</span></a>';
-	
-		$subject[] = $statusLink;
 	
 		return $subject;
 	}
@@ -67,7 +75,7 @@ class rex_slice_status {
 		$sql = rex_sql::factory();
 		$sql->setQuery($sqlStatement);
 	
-		if (($sql->getValue('status') == 1) || $REX['REDAXO']) {
+		if (!isset($slices[$slice_id]) || $sql->getValue('status') == 1 || $REX['REDAXO']) {
 			return $subject;
 		} else {
 			return '<?php if (false) { ?>' . $subject . '<?php } ?>';

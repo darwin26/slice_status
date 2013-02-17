@@ -4,6 +4,8 @@ Slice Status - Changelog
 ### Version 1.2.3 - 17. Feburar 2013
 
 * Changelog hinzugefügt
+* Dateirechte korrekt eingestellt
+* PHP-Funktion `updateSliceStatusInDB` in `updateSliceStatus` geändert
 * Fixed #8: Slice Status gibt nun Fehlermeldung aus wenn `status` DB-Feld nicht gefunden
 * Fixed #7: Ajax Mode läuft jetzt auch wenn REDAXO in einem Unterordner installiert wurde
 * Funktionen in statische Klasse `rex_slice_status` verschoben

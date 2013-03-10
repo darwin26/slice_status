@@ -10,7 +10,6 @@ class rex_slice_status {
 
 		// check for status db field
 		if ($sql->getRows() == 0) {
-			echo rex_warning($I18N->msg('status_debfield_not_found'));
 			return array();
 		}
 
@@ -33,6 +32,11 @@ class rex_slice_status {
 		// get status of current slice
 		if (!isset($slices)) {
 			$slices = self::fetchSliceStatus(); // now only one db query necessary
+
+			if (count($slices) == 0) {
+				// inform user that status db field is missing
+				echo rex_warning($I18N->msg('status_dbfield_not_found'));
+			}
 		}
 	
 		if (isset($slices[$slice_id])) {
@@ -109,6 +113,15 @@ class rex_slice_status {
 		$insert .= '<!-- END slice_status -->';
 	
 		return $params['subject'] . PHP_EOL . $insert;
+	}
+
+	static function afterDBImport($params) {
+		global $REX, $I18N;
+
+		if (count(rex_slice_status::fetchSliceStatus()) == 0) {
+			require($REX['INCLUDE_PATH'] . '/addons/slice_status/install.inc.php');
+			echo rex_info($I18N->msg('status_dbfield_readded'));
+		}
 	}
 }
 ?>

@@ -8,6 +8,7 @@ $REX['ADDON']['supportpage']['slice_status'] = 'forum.redaxo.de';
 $REX['ADDON']['perm']['slice_status'] = 'slice_status[]';
 
 $REX['PERM'][] = 'slice_status[]';
+$REX['EXTPERM'][] = 'publishSlice[]';
 
 // settings
 $REX['ADDON']['slice_status']['ajax_mode'] = true;
@@ -25,7 +26,9 @@ if ($REX['REDAXO']) {
 	}
 
 	// handle slice menu
-	rex_register_extension('ART_SLICE_MENU', 'rex_slice_status::modifySliceEditMenu');
+	if (is_object($REX['USER']) && (($REX['USER']->hasPerm('publishSlice[]') || $REX['USER']->isAdmin()))){
+		rex_register_extension('ART_SLICE_MENU', 'rex_slice_status::modifySliceEditMenu');
+	}
 
 	// add css/js files to page header
 	rex_register_extension('PAGE_HEADER', 'rex_slice_status::appendToPageHeader');

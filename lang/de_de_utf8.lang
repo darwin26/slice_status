@@ -3,5 +3,5 @@
 toggle_slice_offline = Offline schalten
 toggle_slice_online = Online schalten
 import_msg = Daten von AddOn "slice_onoff" wurden übernommen
-status_debfield_not_found = Bitte reinstallieren Sie das AddOn "Slice Status".
+status_debfield_not_found = DB-Felder des AddOns "Slice Status" nicht gefunden. Bitte das AddOn reinstalieren.
 

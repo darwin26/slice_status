@@ -107,16 +107,9 @@ class rex_slice_status {
 	static function appendToPageHeader($params) {
 		global $REX;
 
-		// check for media addon dir var introduced in REX 4.5
-		if (isset($REX['MEDIA_ADDON_DIR'])) {
-			$mediaAddonDir = $REX['MEDIA_ADDON_DIR'];
-		} else {
-			$mediaAddonDir = 'files/addons';
-		}
-
 		$insert = '<!-- BEGIN slice_status -->' . PHP_EOL;
-		$insert .= '<link rel="stylesheet" type="text/css" href="../' . $mediaAddonDir . '/slice_status/slice_status.css" />' . PHP_EOL;
-		$insert .= '<script type="text/javascript" src="../' . $mediaAddonDir . '/slice_status/slice_status.js"></script>' . PHP_EOL;
+		$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/slice_status/slice_status.css" />' . PHP_EOL;
+		$insert .= '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/slice_status/slice_status.js"></script>' . PHP_EOL;
 		$insert .= '<!-- END slice_status -->';
 	
 		return $params['subject'] . PHP_EOL . $insert;
@@ -128,6 +121,17 @@ class rex_slice_status {
 		if (count(rex_slice_status::fetchSliceStatus()) == 0) {
 			require($REX['INCLUDE_PATH'] . '/addons/slice_status/install.inc.php');
 			echo rex_info($I18N->msg('status_dbfield_readded'));
+		}
+	}
+
+	static function getMediaAddonDir() {
+		global $REX;
+
+		// check for media addon dir var introduced in REX 4.5
+		if (isset($REX['MEDIA_ADDON_DIR'])) {
+			return $REX['MEDIA_ADDON_DIR'];
+		} else {
+			return 'files/addons';
 		}
 	}
 }

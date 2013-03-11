@@ -33,12 +33,12 @@ Hinweise
 Changelog
 ---------
 
-siehe [CHANGELOG.md](/CHANGELOG.md)
+siehe [CHANGELOG.md](CHANGELOG.md)
 
 Lizenz
 ------
 
-siehe [LICENSE.md](/LICENSE.md)
+siehe [LICENSE.md](LICENSE.md)
 
 Credits
 -------

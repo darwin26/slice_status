@@ -10,17 +10,8 @@ Features
 * Fügt einen Button zum on/offline schalten von Blöcken (Slices) hinzu.
 * Offline Blöcke werden im Backend mit anderer Farbe und geringerer Opacity dargestellt
 * Aussehen kann komplett über CSS geändert werden
-* AJAX Modus ein/ausschaltbar (in der config.inc.php)
+* AJAX Modus ein/ausschaltbar
 * Komplett neuer und vereinfachter Code
-
-Änderungen gegenüber Vorversion (slice_onoff 0.3)
--------------------------------------------------
-
-* Läuft auch ohne AJAX
-* Radiobuttons innerhalb der Blöcke (rechts unten) entfernt
-* On/Off Button hinter die Move Up/Down Buttons gesetzt
-* Es wird nur noch eine If-Abfrage pro Offline-Slice generiert
-* Kompletter Code Rewrite
 
 Wechsel von slice_onoff auf slice_status
 ----------------------------------------
@@ -36,12 +27,21 @@ Hinweise
 
 * Getestet mit REDAXO 4.4, 4.3
 * Addon-Ordner lautet: `slice_status`
-* AJAX Modus auschaltbar über die config.inc.php
 * Farbe/Opacity der Offline-Slices änderbar in `/files/addons/slice_status/slice_status.css`
 * Alte Version wurde als Branch archiviert
+
+Changelog
+---------
+
+siehe [CHANGELOG.md](/CHANGELOG.md)
+
+Lizenz
+------
+
+siehe [LICENSE.md](/LICENSE.md)
 
 Credits
 -------
 
-* Dank gilt dem ursprünglichen Autor von slice_onoff für die Idee und die Vorlage.
+* Dank gilt dem ursprünglichen Autor von slice_onoff für die Idee und die Vorlage
 * Icons von hier entnommen: <a href="http://www.famfamfam.com/lab/icons/silk/">FamFamFam Silk Icons</a>

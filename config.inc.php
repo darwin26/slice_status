@@ -1,6 +1,7 @@
 <?php
 // slice status addon
 $REX['ADDON']['rxid']['slice_status'] = '1022';
+$REX['ADDON']['name']['slice_status'] = 'Slice Status'; // <-- comment out this line if you don't want to see the backend page
 $REX['ADDON']['page']['slice_status'] = 'slice_status';
 $REX['ADDON']['version']['slice_status'] = '1.3.0';
 $REX['ADDON']['author']['slice_status'] = "WebDevOne";
@@ -10,10 +11,8 @@ $REX['ADDON']['perm']['slice_status'] = 'slice_status[]';
 $REX['PERM'][] = 'slice_status[]';
 $REX['EXTPERM'][] = 'publishSlice[]';
 
-// settings
-$REX['ADDON']['slice_status']['ajax_mode'] = true;
-
 // includes
+require_once($REX['INCLUDE_PATH'] . '/addons/slice_status/settings.inc.php');
 require_once($REX['INCLUDE_PATH'] . '/addons/slice_status/classes/class.rex_slice_status.inc.php');
 
 if ($REX['REDAXO']) {

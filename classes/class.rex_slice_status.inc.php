@@ -29,6 +29,9 @@ class rex_slice_status {
 	
 		extract($params);
 
+		// get menu item position: left/right
+		$menuItemPosition = trim($REX['ADDON']['slice_status']['menuitem_position']);
+
 		// get status of current slice
 		if (!isset($slices)) {
 			$slices = self::fetchSliceStatus(); // now only one db query necessary
@@ -44,11 +47,11 @@ class rex_slice_status {
 
 			// retrieve stuff for new status
 			if ($curStatus == 1) {
-				$aClass = 'slice-status slice-' . $slice_id . ' online';
+				$aClass = 'slice-status ' . $menuItemPosition . ' slice-' . $slice_id . ' online';
 				$aTitle = $I18N->msg('toggle_slice_offline');
 				$newStatus = '0';
 			} else {
-				$aClass = 'slice-status slice-' . $slice_id . ' offline';
+				$aClass = 'slice-status ' . $menuItemPosition . ' slice-' . $slice_id . ' offline';
 				$aTitle = $I18N->msg('toggle_slice_online');
 				$newStatus = '1';
 			}
@@ -64,7 +67,11 @@ class rex_slice_status {
 			$dataAttributes = 'data-title-online="' . $I18N->msg('toggle_slice_online') . '" data-title-offline="' . $I18N->msg('toggle_slice_offline') . '"';
 			$statusLink = '<a class="' . $aClass . '" href="' . $aHref . '" title="' . $aTitle . '" ' . $dataAttributes . '><span>Slice Status</span></a>';
 	
-			$subject[] = $statusLink;
+			if ($menuItemPosition == 'left') {
+				array_unshift($subject, $statusLink);
+			} else {
+				$subject[] = $statusLink;
+			}
 		}
 	
 		return $subject;

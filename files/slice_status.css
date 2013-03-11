@@ -24,6 +24,10 @@ a.slice-status {
 	display: block;
 }
 
+a.slice-status.left {
+	padding-right: 2px;
+}
+
 a.slice-status.online {
 	background-position: left top;	
 }

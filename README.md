@@ -28,6 +28,8 @@ Hinweise
 * Getestet mit REDAXO 4.4, 4.3
 * Addon-Ordner lautet: `slice_status`
 * Farbe/Opacity der Offline-Slices änderbar in `/files/addons/slice_status/slice_status.css`
+* Nicht-Admins benötigen dieses Benutzerrecht um die Slices on/off schalten zu können: publicSlice[]
+* Backend Page lässt sich in der config.inc.php abschalten. Dazu Zeile 4 auskommentieren
 * Alte Version wurde als Branch archiviert
 
 Changelog

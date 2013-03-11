@@ -1,6 +1,14 @@
 Slice Status - Changelog
 ========================
 
+### Version 1.3.0 - 11. März 2013
+
+* Neue Backend Page mit allen Einstellungsmöglichkeiten
+* DB Feld Auto Fixer: erkennt wenn nach einem DB Import die DB Felder fehlen und stellt sie wieder her
+* Neues Benutzerrecht publishSlice[] hinzugefügt
+* Settings aus config.inc.php nach setting.inc.php verlagert
+* Lizenz-Datei hinzugefügt
+
 ### Version 1.2.5 - 17. Feburar 2013
 
 * $REX['MEDIA_ADDON_DIR'] wird genutzt wenn vorhanden
@@ -26,6 +34,7 @@ Slice Status - Changelog
 * Offline Slices lassen sich komplett über CSS stylen
 * Code Optimierungen vorgenommen
 * Fixed #3: TypeError: $ is not a function
+* Icons als Sprite um Nachladen des Hover-Icons zu verhindern
 
 ### Version 1.0.5 - 08. November 2012
 

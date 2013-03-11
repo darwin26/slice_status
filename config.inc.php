@@ -34,7 +34,9 @@ if ($REX['REDAXO']) {
 	rex_register_extension('PAGE_HEADER', 'rex_slice_status::appendToPageHeader');
 
 	// check for missing db field after db import
-	rex_register_extension('A1_AFTER_DB_IMPORT', 'rex_slice_status::afterDBImport');
+	if (!$REX['SETUP']) {
+		rex_register_extension('A1_AFTER_DB_IMPORT', 'rex_slice_status::afterDBImport');
+	}
 }
 
 // handle slice visibility in frontend

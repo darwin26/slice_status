@@ -25,7 +25,7 @@ if ($REX['REDAXO']) {
 	}
 
 	// handle slice menu
-	if (is_object($REX['USER']) && (($REX['USER']->hasPerm('publishSlice[]') || $REX['USER']->isAdmin()))){
+	if (is_object($REX['USER']) && ((!$REX['USER']->hasPerm('editContentOnly[]') && $REX['USER']->hasPerm('publishSlice[]') || $REX['USER']->isAdmin()))) {
 		rex_register_extension('ART_SLICE_MENU', 'rex_slice_status::modifySliceEditMenu');
 	}
 

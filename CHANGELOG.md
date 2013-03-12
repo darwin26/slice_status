@@ -1,11 +1,12 @@
 Slice Status - Changelog
 ========================
 
-### Version 1.3.0 - 11. März 2013
+### Version 1.3.0 - 12. März 2013
 
 * Neue Backend Page mit allen Einstellungsmöglichkeiten
 * DB Feld Auto Fixer: erkennt wenn nach einem DB Import die DB Felder fehlen und stellt sie wieder her
-* Neues Benutzerrecht publishSlice[] hinzugefügt
+* Neues Benutzerrecht publishSlice[] für Nicht-Admins hinzugefügt
+* AddOn reagiert nun auch auf das Benutzerrecht editContentOnly[]
 * Settings aus config.inc.php nach setting.inc.php verlagert
 * Lizenz-Datei hinzugefügt
 

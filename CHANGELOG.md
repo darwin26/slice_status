@@ -1,6 +1,8 @@
 Slice Status - Changelog
 ========================
 
+### Version 2.0.0
+
 ### Version 1.3.0 - 12. März 2013
 
 * Neue Backend Page mit allen Einstellungsmöglichkeiten

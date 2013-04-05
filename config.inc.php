@@ -30,7 +30,7 @@ if ($REX['REDAXO']) {
 	}
 
 	// add css/js files to page header
-	if (rex_request('page') == 'content') {
+	if (rex_request('page') == 'content' && rex_request('mode') == 'edit') {
 		rex_register_extension('PAGE_HEADER', 'rex_slice_status::appendToPageHeader');
 	}
 

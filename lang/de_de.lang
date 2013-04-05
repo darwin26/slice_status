@@ -1,8 +1,8 @@
 toggle_slice_offline = Offline schalten
 toggle_slice_online = Online schalten
 import_msg = Daten von AddOn "slice_onoff" wurden übernommen
-status_dbfield_not_found = DB-Felder des AddOns "Slice Status" nicht gefunden. Bitte das AddOn reinstallieren.
-status_dbfield_readded = Fehlende DB-Felder des AddOns "Slice Status" wurden hinzugefügt.
+status_dbfield_not_found = Slice Status: DB-Felder des AddOns nicht gefunden. Bitte das AddOn reinstallieren.
+status_dbfield_readded = Slice Status: Fehlende DB-Felder des AddOns wurden hinzugefügt.
 slice_status_ajax_mode = Slices per Ajax umschalten
 slice_status_css_hint = Aussehen der Offline-Slices änderbar in:
 slice_status_menuitem_position = Position im Slice-Menu

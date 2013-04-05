@@ -19,8 +19,8 @@ if ($REX['REDAXO']) {
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/slice_status/lang/');
 
-	// update slice status in db if necessary
-	if (rex_get('function') == 'updateslicestatus') {
+	// update slice status in db if necessary (used for ajax and non-ajax status switching)
+	if (rex_request('function') == 'updateslicestatus') {
 		rex_slice_status::updateSliceStatus(rex_get('article_id'), rex_get('clang'), rex_get('slice_id'), rex_get('new_status'));
 	}
 

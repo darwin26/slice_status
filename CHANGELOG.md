@@ -1,9 +1,9 @@
 Slice Status - Changelog
 ========================
 
-### Version 2.0.0 RC - 05. April 2013
+### Version 2.0.0 - 05. April 2013
 
-* Neue Backend Page mit allen Einstellungsmöglichkeiten
+* Neue Backend Page mit Einstellungsmöglichkeiten
 * DB Feld Auto Fixer: erkennt wenn nach einem DB Import die DB Felder fehlen und stellt sie wieder her
 * Neues Benutzerrecht publishSlice[] für Nicht-Admins hinzugefügt
 * AddOn reagiert nun auch auf das Benutzerrecht editContentOnly[]

@@ -30,7 +30,9 @@ if ($REX['REDAXO']) {
 	}
 
 	// add css/js files to page header
-	rex_register_extension('PAGE_HEADER', 'rex_slice_status::appendToPageHeader');
+	if (rex_request('page') == 'content') {
+		rex_register_extension('PAGE_HEADER', 'rex_slice_status::appendToPageHeader');
+	}
 
 	// check for missing db field after db import
 	if (!$REX['SETUP']) {

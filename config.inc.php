@@ -3,8 +3,8 @@
 $REX['ADDON']['rxid']['slice_status'] = '1022';
 $REX['ADDON']['name']['slice_status'] = 'Slice Status'; // <-- comment out this line if you don't want to see the backend page
 $REX['ADDON']['page']['slice_status'] = 'slice_status';
-$REX['ADDON']['version']['slice_status'] = '2.0.0';
-$REX['ADDON']['author']['slice_status'] = "WebDevOne";
+$REX['ADDON']['version']['slice_status'] = '2.0.0 RC';
+$REX['ADDON']['author']['slice_status'] = "RexDude";
 $REX['ADDON']['supportpage']['slice_status'] = 'forum.redaxo.de';
 $REX['ADDON']['perm']['slice_status'] = 'slice_status[]';
 
@@ -42,4 +42,4 @@ if ($REX['REDAXO']) {
 
 // handle slice visibility in frontend
 rex_register_extension('SLICE_SHOW', 'rex_slice_status::sliceShow');
-?>
+

@@ -7,4 +7,4 @@ $sql->setQuery('ALTER TABLE `' . $REX['TABLE_PREFIX'] . 'article_slice` DROP `st
 rex_generateAll();
 
 $REX['ADDON']['install']['slice_status'] = 0;
-?>
+

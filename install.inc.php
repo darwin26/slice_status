@@ -25,4 +25,4 @@ if ($sql->getRows() > 0) {
 }
 
 $REX['ADDON']['install']['slice_status'] = 1;
-?>
+

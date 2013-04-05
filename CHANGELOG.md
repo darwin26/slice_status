@@ -1,9 +1,7 @@
 Slice Status - Changelog
 ========================
 
-### Version 2.0.0
-
-### Version 1.3.0 - 12. März 2013
+### Version 2.0.0 RC - 05. April 2013
 
 * Neue Backend Page mit allen Einstellungsmöglichkeiten
 * DB Feld Auto Fixer: erkennt wenn nach einem DB Import die DB Felder fehlen und stellt sie wieder her

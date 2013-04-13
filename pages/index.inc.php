@@ -87,14 +87,18 @@ if (!is_writable($config_file)) {
 </div>
 
 <style type="text/css">
-div.rex-form-row label {
+#rex-page-slice-status div.rex-form-row label {
 	width: 240px !important; 
 }
 
-span#css_hint code {
-	font-size: 0.9em;
+#rex-page-slice-status p.rex-form-submit {
+	text-align: right;
 }
 
+#rex-page-slice-status div.rex-form div.rex-form-element-v2 p input.rex-form-submit {
+	margin-left: 0;
+	margin-right: 40px;
+}
 </style>
 
 <?php require($REX['INCLUDE_PATH'] . '/layout/bottom.php'); ?>

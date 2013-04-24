@@ -1,8 +1,9 @@
 Slice Status - Changelog
 ========================
 
-### Version 2.0.0 - 05. April 2013
+### Version 2.0.0 - 24. April 2013
 
+* CSS und JS Dateien werden nur noch in der Content-Ansicht inkludiert
 * Neue Backend Page mit Einstellungsmöglichkeiten
 * DB Feld Auto Fixer: erkennt wenn nach einem DB Import die DB Felder fehlen und stellt sie wieder her
 * Neues Benutzerrecht publishSlice[] für Nicht-Admins hinzugefügt

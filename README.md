@@ -25,7 +25,7 @@ Will man keinen Import so deinstalliert man `slice_onoff` zuvor.
 Hinweise
 --------
 
-* Getestet mit REDAXO 4.4, 4.3
+* Getestet mit REDAXO 4.5, 4.4, 4.3
 * Addon-Ordner lautet: `slice_status`
 * Farbe/Opacity der Offline-Slices änderbar in `/files/addons/slice_status/slice_status.css`
 * Nicht-Admins benötigen dieses Benutzerrecht um die Slices on/off schalten zu können: publicSlice[]

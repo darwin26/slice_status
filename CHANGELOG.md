@@ -1,6 +1,10 @@
 Slice Status - Changelog
 ========================
 
+### Version 2.0.1 - 31. Juli 2013
+
+* Fixed #14: Problem mit dem Version Addon behoben
+
 ### Version 2.0.0 - 24. April 2013
 
 * CSS und JS Dateien werden nur noch in der Content-Ansicht inkludiert

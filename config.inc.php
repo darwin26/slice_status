@@ -3,7 +3,7 @@
 $REX['ADDON']['rxid']['slice_status'] = '1022';
 $REX['ADDON']['name']['slice_status'] = 'Slice Status'; // <-- comment out this line if you don't want to see the backend page
 $REX['ADDON']['page']['slice_status'] = 'slice_status';
-$REX['ADDON']['version']['slice_status'] = '2.0.0';
+$REX['ADDON']['version']['slice_status'] = '2.0.1';
 $REX['ADDON']['author']['slice_status'] = "RexDude";
 $REX['ADDON']['supportpage']['slice_status'] = 'forum.redaxo.de';
 $REX['ADDON']['perm']['slice_status'] = 'slice_status[]';
@@ -37,6 +37,11 @@ if ($REX['REDAXO']) {
 	// check for missing db field after db import
 	if (!$REX['SETUP']) {
 		rex_register_extension('A1_AFTER_DB_IMPORT', 'rex_slice_status::afterDBImport');
+	}
+
+	// fix for version addon
+	if (rex_request('rex_version_func') != '') {
+		rex_register_extension('ARTICLE_GENERATED', 'rex_slice_status::versionAddonFix');
 	}
 }
 

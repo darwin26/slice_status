@@ -134,5 +134,9 @@ class rex_slice_status {
 			return 'files/addons';
 		}
 	}
+
+	static function versionAddonFix($params) {
+		rex_deleteCacheArticleContent(rex_request('article_id'), rex_request('clang'));
+	}
 }
 

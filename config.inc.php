@@ -3,7 +3,7 @@
 $REX['ADDON']['rxid']['slice_status'] = '1022';
 $REX['ADDON']['name']['slice_status'] = 'Slice Status'; // <-- comment out this line if you don't want to see the backend page
 $REX['ADDON']['page']['slice_status'] = 'slice_status';
-$REX['ADDON']['version']['slice_status'] = '2.0.1';
+$REX['ADDON']['version']['slice_status'] = '2.0.2';
 $REX['ADDON']['author']['slice_status'] = "RexDude";
 $REX['ADDON']['supportpage']['slice_status'] = 'forum.redaxo.de';
 $REX['ADDON']['perm']['slice_status'] = 'slice_status[]';
@@ -22,6 +22,10 @@ if ($REX['REDAXO']) {
 	// update slice status in db if necessary (used for ajax and non-ajax status switching)
 	if (rex_request('function') == 'updateslicestatus') {
 		rex_slice_status::updateSliceStatus(rex_get('article_id'), rex_get('clang'), rex_get('slice_id'), rex_get('new_status'));
+	
+		if (rex_request('mode') == 'ajax') {
+			exit;
+		}
 	}
 
 	// handle slice menu

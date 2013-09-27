@@ -1,6 +1,10 @@
 Slice Status - Changelog
 ========================
 
+### Version 2.0.2 - 26. September 2013
+
+* Performance erhöht beim Umschalten der Slices im Ajax-Mode.
+
 ### Version 2.0.1 - 31. Juli 2013
 
 * Fixed #14: Problem mit dem Version Addon behoben
